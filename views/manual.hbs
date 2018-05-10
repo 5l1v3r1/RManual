@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">NAME</th>
+            <th scope="col">HTML</th>
+            <th scope="col">R MARKDOWN</th>
+        </tr>
+    </thead>
+    <tbody>
+    {{#each manuals}}
+        <tr>
+            <td>
+                {{name}}
+            </td>
+            <td>
+                <a href="{{url}}">{{url}}</a>
+            </td>
+            <td>
+                <a href="manual/{{name}}">Download</a>
+            </td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
