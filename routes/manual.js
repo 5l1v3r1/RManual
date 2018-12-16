@@ -124,7 +124,7 @@ const Manual = mongoose.model('manuals');
 router.get('/', (req, res) => {
   Manual.find({}, (err, manuals) => {
     if (err) return res.sendStatus(500);
-    return res.render('manual', { title: 'PranaGeO R Manual', manuals });
+    return res.render('manual', { title: 'R Manual', manuals });
   });
 });
 
@@ -150,11 +150,9 @@ router.get('/:documentName', (req, res) => {
 module.exports = router;
 
 function parseCode(code = [], result = []) {
-  //https://rculture.pranageo.com/raas/raas/library/base/R/parse
-  //https://dev.pranageo.com:444
+// 
   
-  var response = syncRequest("POST", "https://dev.pranageo.com/raas/library/base/R/parse", {
-  // var response = syncRequest("POST", "https://dev.pranageo.com:444/raas/library/base/R/parse", {
+  var response = syncRequest("POST", "POST ADRESS", {
     headers: { "content-type": "application/json" },
     json: { text: '"' + code.join("\n").replace(/"/g, '\\"') + '"' }
   })
